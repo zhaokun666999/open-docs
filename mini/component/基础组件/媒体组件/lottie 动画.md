@@ -44,7 +44,7 @@ Page({
 		} 
 	},
   	onReady() {
-    	var lottieContext = my.createLottieContext(elementId);
+    	var lottieContext = my.createLottieContext(this.data.item.id);
 		lottieContext.play()
     }
 })
@@ -125,10 +125,6 @@ Lottie 对资源的定义是
 **注意：** 如果在支付宝 10.1.52、10.1.60 版本中使用 Base64 资源，需要在 JSON 文件中增加 assetsPath="/" 作为参数，否则 iOS 上可能无法显示。
 
 # 常见问题
-
-## 检测相关
-
-UI 设计师已完成的物料资源请先在 [Lottie 平台](https://design.alipay.com/lolita) 上做一次检测，保证物料包的内容文件符合小程序规范。<br />![](https://cdn.nlark.com/yuque/0/2022/png/179989/1649386200577-b67b1519-f12a-4cee-bb6b-2f76c2bf2ebe.png)
 
 ## 修复兼容性问题
 
