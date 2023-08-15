@@ -50,24 +50,11 @@ recorderManager.onStop(res => {
   console.log('recorder onStop', JSON.stringify(res));
   my.alert({
     content:
-      'recorder onStop' + JSON.stringify(res) + '  ' + res['tempFilePath'],
-  });
-  // 保存本次录音文件地址
-  my.saveFile({
-    apFilePath: res['tempFilePath'],
-    success: function (res) {
-      my.alert({ content: 'recorder saveFile success' + JSON.stringify(res) });
-    },
-    fail: function (res) {
-      my.alert({ content: 'recorder saveFile fail' + JSON.stringify(res) });
-    },
-    complete: function (res) {
-      my.alert({ content: 'recorder saveFile complete' + JSON.stringify(res) });
-    },
+      'recorder onStop' + JSON.stringify(res) + '  ' + res.tempFilePath,
   });
 
   // 将文件临时路径 tempFilePath 作为音频播放源
-  innerAudioContext.src = res['tempFilePath'];
+  innerAudioContext.src = res.tempFilePath;
   //backgroundAudioManager.src = res['tempFilePath'];
 });
 
